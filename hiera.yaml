@@ -1,0 +1,14 @@
+# <ENVIRONMENT>/hiera.yaml
+---
+version: 5
+
+defaults:  # Used for any hierarchy level that omits these keys.
+  datadir: ./hieradata  # This path is relative to the environment -- <ENVIRONMENT>/data
+
+hierarchy:
+  - name: "Common data"
+    path: "common.yaml"
+    lookup_key: eyaml_lookup_key
+    options:
+      pkcs7_public_key: /root/eyaml-key.pkcs7.pem
+
